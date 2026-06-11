@@ -94,6 +94,9 @@ X = df.drop("Loan_Status", axis=1)
 Y = df["Loan_Status"].map({"N":0,"Y":1})
 
 X = pd.get_dummies(X, drop_first=True)
+print("Number of features:", len(X.columns))
+print(X.columns.tolist())
+
 pickle.dump(X.columns.tolist(), open("columns.pkl", "wb"))
 
 x_train,x_test,y_train,y_test=train_test_split(X,Y,random_state=42,test_size=0.2)
