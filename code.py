@@ -28,7 +28,7 @@ df=df.dropna()
 
 df.fillna(df.mean(numeric_only=True),inplace=True)
 df.fillna(df.mode().iloc[0],inplace=True)
-'''
+
 plt.figure(figsize=(6,4))
 sns.countplot(x="Loan_Status",data=df)
 plt.title("Loan Approval Distribution")
@@ -87,7 +87,7 @@ plt.show()
 
 sns.pairplot(df,hue='Loan_Status')
 plt.show()
-'''
+
 scaler=StandardScaler()
 df.drop("Loan_ID", axis=1, inplace=True)
 X = df.drop("Loan_Status", axis=1)
