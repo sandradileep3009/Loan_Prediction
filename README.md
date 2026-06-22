@@ -1,176 +1,136 @@
-# Explainable Credit Risk Scoring System
+💳 CrediShield AI — Explainable Credit Risk Scoring & Bias Audit Platform
+Overview
+CrediShield AI is an end-to-end machine learning platform designed to predict loan default risk and provide transparent, regulatory-compliant risk assessments.
 
-## AI-Powered Loan Approval Prediction with Explainable Machine Learning
+Because modern lenders require transparency rather than black-box decisions, this system benchmarks multiple classification models, evaluates fairness across demographic groups, and utilizes SHAP explainability to isolate the top 3 risk drivers for individual applicants within an interactive Streamlit UI.
 
-A machine learning based credit risk scoring system that predicts loan approval decisions while explaining the factors behind each prediction.
+⚠️ This project is an AI prototype for research, automated lending simulation, and educational purposes.
 
-This project focuses on building a transparent lending model instead of a black-box classifier. The system allows a user to enter applicant details through a Streamlit interface and receive a loan decision with a risk score.
+Key Features
+🧠 Multi-Model Benchmarking & Credit Scoring
+Implemented and evaluated three distinct models: Logistic Regression (baseline), Random Forest, and XGBoost.
 
-## Features
+Automated selection of the optimal champion model based on the highest ROC-AUC score.
 
-- Loan approval prediction system
-- Multiple machine learning model comparison
-- Automated best model selection
-- Explainable AI integration
-- Credit risk scoring interface
-- Fairness evaluation for responsible AI
+Handled end-to-end data pipelines including categorical one-hot encoding, missing value mitigation, and feature scaling.
 
+🔍 Regulatory Transparency & Explainable AI (XAI)
+Integrated SHAP (SHapley Additive exPlanations) to break down complex machine learning decisions.
 
-## Machine Learning Models
+Generates SHAP waterfall plots dynamically for individual applicants to reveal exactly why a loan application was approved or denied.
 
-Implemented and compared:
+Directly surfaces the top 3 risk factors influencing a lender's decision.
 
-- Logistic Regression (baseline model)
-- Random Forest
-- XGBoost
+⚖️ Algorithmic Fairness & Bias Auditing
+Incorporated Fairlearn to audit predictions for systematic bias.
 
+Evaluates the Demographic Parity Difference across sensitive attributes (such as Gender) to ensure ethical and compliant AI lending practices.
 
-Evaluation metrics:
+📈 Advanced Model Evaluation
+Evaluated and visualized via:
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC
+Accuracy, Precision, Recall, and F1-Score
 
+Confusion Matrix analytics
 
-The best performing model is selected automatically based on ROC-AUC performance.
+Comparative Multi-Model ROC Curve plotting
 
+🖥️ Streamlit Loan Officer Dashboard
+An interactive UI tailored for financial institutions:
 
-## Explainable AI (SHAP)
+Interactive input forms for loan applicants' details.
 
-Integrated SHAP (SHapley Additive exPlanations) to improve model transparency.
+Real-time credit decisions (Approved/Denied).
 
-The system focuses on answering:
+Visual, local feature contribution graphs for clear compliance auditing.
 
-"Why was this loan approved or rejected?"
-
-
-The model analyzes important risk factors including:
-
-- Credit history
-- Applicant income
-- Loan amount
-- Applicant profile information
-
-
-This helps create more transparent and interpretable lending decisions.
-
-
-## Streamlit Application
-
-Built an interactive web interface where users can input:
-
-- Gender
-- Marital status
-- Education
-- Employment status
-- Dependents
-- Applicant income
-- Co-applicant income
-- Loan amount
-- Loan term
-- Credit history
-- Property area
-
-
-The application provides:
-
-- Loan approval/rejection decision
-- Prediction probability
-- Credit risk score
-
-
-## Fairness Analysis
-
-Added fairness evaluation using demographic parity analysis.
-
-The system checks possible bias in predictions across demographic groups and supports responsible AI development.
-
-
-## Technology Stack
+Tech Stack
+Languages
 
 Python
 
-Machine Learning:
-- Scikit-learn
-- XGBoost
+Machine Learning & Frameworks
 
-Explainability:
-- SHAP
+Scikit-learn
 
-Data Processing:
-- Pandas
-- NumPy
+XGBoost
 
-Visualization:
-- Matplotlib
-- Seaborn
+Fairlearn (Fairness Metric Auditing)
 
-Deployment:
-- Streamlit
+Explainability
 
+SHAP (TreeExplainer)
 
-## Project Workflow
+Data Science & Visualization
 
-Applicant Data
+Pandas
 
-↓
+NumPy
 
-Data Cleaning and Feature Engineering
+Matplotlib
 
-↓
+Seaborn
 
-Train Multiple Machine Learning Models
+Deployment
+
+Streamlit
+
+Project Workflow
+Loan Applicant Data (loan.csv)
 
 ↓
 
-Compare Model Performance
+Data Cleaning & One-Hot Encoding
 
 ↓
 
-Select Best Model
+Standard Feature Scaling
 
 ↓
 
-Predict Credit Risk
+Multi-Model Benchmarking (LogReg, RF, XGBoost)
 
 ↓
 
-Provide Explainable Decision
+Champion Model Selection (Highest ROC-AUC)
 
+↓
 
-## Project Structure
+Fairness & Bias Audit (Demographic Parity)
 
-Explainable-Credit-Risk-Scoring-System/
+↓
 
-- loan.csv
-- code.py
-- app.py
-- loan_model.pkl
-- scaler.pkl
-- columns.pkl
-- requirements.txt
-- README.md
+SHAP Waterfall Generation (Local Risk Factors)
 
+↓
 
-## How To Run
-
+Streamlit Interactive Dashboard UI
+Project Structure
+Credit_risk_scoring/
+│
+├── code.py               # Model training, benchmarking, bias auditing, and serialization
+├── app.py                # Streamlit web application frontend
+├── loan.csv              # Raw credit applicant dataset
+├── loan_model.pkl        # Serialized champion model (XGBoost/RF)
+├── scaler.pkl            # Saved StandardScaler instance
+├── columns.pkl           # Saved feature column mapping for alignment
+├── requirements.txt      # Project dependencies
+└── README.md             # Project documentation
+Running the Project
 Install dependencies:
 
+Bash
 pip install -r requirements.txt
+Train and evaluate models (saves artifacts):
 
-
-Train model:
-
+Bash
 python code.py
+Run the interactive dashboard application:
 
-
-Run application:
-
+Bash
 streamlit run app.py
+Resume Highlight
+Built an explainable credit risk scoring system (XGBoost + SHAP) with a Streamlit interface that surfaces the top risk drivers per applicant — designed for regulatory transparency.
 
-
-## Resume Description
-
-Built an explainable credit risk scoring system using Logistic Regression, Random Forest, and XGBoost with SHAP-based interpretability and a Streamlit interface that provides transparent loan approval predictions while highlighting key risk factors behind each decision.
+Author
+Sandra Dileep Computer Science Student | AI/ML Enthusiast
