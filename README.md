@@ -1,47 +1,24 @@
 # Explainable Credit Risk Scoring System
 
-## AI-powered loan approval prediction platform with model explainability and risk transparency
+## AI-Powered Loan Approval Prediction with Explainable Machine Learning
 
-A machine learning based credit risk scoring system that predicts loan approval decisions while providing interpretable insights into the factors influencing each decision.
+A machine learning based credit risk scoring system that predicts loan approval decisions while explaining the factors behind each prediction.
 
-Unlike traditional black-box loan prediction models, this project focuses on **explainable AI (XAI)** by showing why a loan application receives a specific prediction.
+This project focuses on building a transparent lending model instead of a black-box classifier. The system allows a user to enter applicant details through a Streamlit interface and receive a loan decision with a risk score.
 
-The system allows a loan officer to enter applicant details through a Streamlit interface and receive:
+## Features
 
-- Loan approval prediction
-- Approval probability score
-- Model-based risk assessment
-- Explainable decision factors
-
-
----
-
-# Project Overview
-
-Financial institutions need accurate risk prediction models, but regulatory requirements demand transparency.
-
-This project builds an end-to-end credit risk assessment pipeline:
-
-Applicant Data  
-↓  
-Data Processing  
-↓  
-Multiple ML Models  
-↓  
-Best Model Selection  
-↓  
-Loan Decision Prediction  
-↓  
-Explainable AI Analysis  
+- Loan approval prediction system
+- Multiple machine learning model comparison
+- Automated best model selection
+- Explainable AI integration
+- Credit risk scoring interface
+- Fairness evaluation for responsible AI
 
 
----
+## Machine Learning Models
 
-# Features
-
-## Machine Learning Pipeline
-
-Implemented and compared multiple classification models:
+Implemented and compared:
 
 - Logistic Regression (baseline model)
 - Random Forest
@@ -57,40 +34,38 @@ Evaluation metrics:
 - ROC-AUC
 
 
-The best performing model is automatically selected and saved.
+The best performing model is selected automatically based on ROC-AUC performance.
 
 
----
-
-# Explainable AI (XAI)
+## Explainable AI (SHAP)
 
 Integrated SHAP (SHapley Additive exPlanations) to improve model transparency.
 
-The system explains:
+The system focuses on answering:
 
-- Which features increase approval probability
-- Which features increase rejection risk
-- Contribution of individual applicant factors
+"Why was this loan approved or rejected?"
 
 
-Example explanations:
+The model analyzes important risk factors including:
 
-High credit history → increases approval chance
+- Credit history
+- Applicant income
+- Loan amount
+- Applicant profile information
 
-Large loan amount → increases risk
+
+This helps create more transparent and interpretable lending decisions.
 
 
----
+## Streamlit Application
 
-# Streamlit Application
-
-Interactive web interface for loan officers.
-
-Users can input:
+Built an interactive web interface where users can input:
 
 - Gender
+- Marital status
 - Education
 - Employment status
+- Dependents
 - Applicant income
 - Co-applicant income
 - Loan amount
@@ -99,6 +74,103 @@ Users can input:
 - Property area
 
 
-Output:
+The application provides:
+
+- Loan approval/rejection decision
+- Prediction probability
+- Credit risk score
 
 
+## Fairness Analysis
+
+Added fairness evaluation using demographic parity analysis.
+
+The system checks possible bias in predictions across demographic groups and supports responsible AI development.
+
+
+## Technology Stack
+
+Python
+
+Machine Learning:
+- Scikit-learn
+- XGBoost
+
+Explainability:
+- SHAP
+
+Data Processing:
+- Pandas
+- NumPy
+
+Visualization:
+- Matplotlib
+- Seaborn
+
+Deployment:
+- Streamlit
+
+
+## Project Workflow
+
+Applicant Data
+
+↓
+
+Data Cleaning and Feature Engineering
+
+↓
+
+Train Multiple Machine Learning Models
+
+↓
+
+Compare Model Performance
+
+↓
+
+Select Best Model
+
+↓
+
+Predict Credit Risk
+
+↓
+
+Provide Explainable Decision
+
+
+## Project Structure
+
+Explainable-Credit-Risk-Scoring-System/
+
+- loan.csv
+- code.py
+- app.py
+- loan_model.pkl
+- scaler.pkl
+- columns.pkl
+- requirements.txt
+- README.md
+
+
+## How To Run
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Train model:
+
+python code.py
+
+
+Run application:
+
+streamlit run app.py
+
+
+## Resume Description
+
+Built an explainable credit risk scoring system using Logistic Regression, Random Forest, and XGBoost with SHAP-based interpretability and a Streamlit interface that provides transparent loan approval predictions while highlighting key risk factors behind each decision.
