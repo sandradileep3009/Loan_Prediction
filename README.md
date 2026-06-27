@@ -171,7 +171,7 @@ Credit_risk_scoring/
 
 # Results
 
-<img width="788" height="728" alt="image" src="https://github.com/user-attachments/assets/4beb05ca-f62b-4de2-b57d-2458d2418443" />
+<img width="773" height="695" alt="image" src="https://github.com/user-attachments/assets/4beb05ca-f62b-4de2-b57d-2458d2418443" />
 <img width="773" height="695" alt="image" src="https://github.com/user-attachments/assets/f666828e-78e0-4ff3-8bf8-8fff4b2d7a58" />
 
 
